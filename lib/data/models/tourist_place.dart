@@ -1,19 +1,21 @@
 class TouristPlace {
   final String id;
-  final String name;              // اسم المنطقة السياحية
-  final String country;           // البلد
-  final double price;             // السعر
-  final String imageUrl;          // رابط الصورة
-  final double rating;            // التقييم (من 5)
-  final int reviewsCount;         // عدد المراجعات
+  final String name;
+  final String location;
+  final double price;
+  final String imageUrl;
+  final double rating;
+  final int reviewsCount;
+  final String description;
 
   TouristPlace({
     required this.id,
     required this.name,
-    required this.country,
+    required this.location,
     required this.price,
     required this.imageUrl,
     required this.rating,
     required this.reviewsCount,
+    required this.description,
   });
 }
