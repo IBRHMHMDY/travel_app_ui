@@ -1,19 +1,22 @@
 import 'package:travel_app_ui/data/models/onboarding.dart';
 
 final List<Onboarding> onboarding = [
-    Onboarding(
-      image: 'assets/images/onboarding/onboarding_1.jpg',
-      title: 'Explore Indonesia with us.',
-      subTitle: 'We Travelin are ready to help you on vacation around Indonesia',
-    ),
-    Onboarding(
-      image: 'assets/images/onboarding/onboarding_2.jpg',
-      title: 'Discover amazing places.',
-      subTitle: 'Let us guide you to untouched nature and hidden gems.',
-    ),
-    Onboarding(
-      image: 'assets/images/onboarding/onboarding_3.jpg',
-      title: 'Plan your perfect trip.',
-      subTitle: 'Book, relax, and enjoy your journey the smart way.',
-    ),
-  ];
+  Onboarding(
+    title: 'Explore Indonesia with us.',
+    subTitle:
+        'We help you plan and enjoy unforgettable trips across Indonesia’s natural wonders.',
+    image: 'assets/onboarding/onboarding_1.jpg',
+  ),
+  Onboarding(
+    title: 'Find Hidden Gems.',
+    subTitle:
+        'Discover beautiful places off the beaten path, guided by locals and travel experts.',
+    image: 'assets/onboarding/onboarding_2.jpg',
+  ),
+  Onboarding(
+    title: 'Easy Booking Experience.',
+    subTitle:
+        'Book trips, activities, and accommodations with just a few taps, wherever you are.',
+    image: 'assets/onboarding/onboarding_3.jpg',
+  ),
+];
