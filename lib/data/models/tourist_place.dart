@@ -5,8 +5,9 @@ class TouristPlace {
   final double price;
   final String imageUrl;
   final double rating;
-  final int reviewsCount;
+  final int reviews;
   final String description;
+  final String category;
 
   TouristPlace({
     required this.id,
@@ -15,7 +16,8 @@ class TouristPlace {
     required this.price,
     required this.imageUrl,
     required this.rating,
-    required this.reviewsCount,
+    required this.reviews,
     required this.description,
+    required this.category,
   });
 }

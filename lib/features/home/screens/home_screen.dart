@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_ui/data/dummy/places_data.dart';
+import 'package:travel_app_ui/data/models/tourist_place.dart';
+import 'package:travel_app_ui/features/home/widgets/popular_places.dart';
+import 'package:travel_app_ui/features/home/widgets/recommendations_places.dart';
+import 'package:travel_app_ui/shared/widgets/header_section.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<TouristPlace> popular = touristPlaces
+      .where((element) => element.category == "Popular")
+      .toList();
+  List<TouristPlace> recommendation = touristPlaces
+      .where((element) => element.category == "Recommendations")
+      .toList();
 
   @override
   Widget build(BuildContext context) {
@@ -9,64 +26,83 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 60,
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.location_on_outlined,
-                    color: Colors.black,
-                    size: 30,
-                  ),
-                  Text("Jawa Timur"),
-                  Icon(Icons.keyboard_arrow_down, color: Colors.grey, size: 30),
-                ],
-              ),
+            Row(
+              children: const [
+                Icon(Icons.location_on_outlined, color: Colors.black, size: 30),
+                SizedBox(width: 5),
+                Text("Jawa Timur"),
+                Icon(Icons.keyboard_arrow_down, color: Colors.grey, size: 30),
+              ],
             ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Icon(Icons.notifications_none, size: 25),
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(15),
               ),
+              child: const Icon(Icons.notifications_none, size: 25),
             ),
           ],
         ),
       ),
-      body: Container(
-        height: double.infinity,
-        decoration: BoxDecoration(color: Colors.grey[200]),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-          child: Column(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // Popular
+          Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Popular Place",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  GestureDetector(
-                    child: Text(
-                      "See all",
-                      style: TextStyle(color: Colors.blue, fontSize: 20),
+              HeaderSection(title: "Popular Places", goPage: () {}),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 15,
+                  horizontal: 15,
+                ),
+                child: SizedBox(
+                  height: 140,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: popular.length,
+                    itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: PopularPlaces(destination: popular[index]),
+                      ),
                     ),
                   ),
-                ],
+                ),
               ),
-              // Carousel Sliders
-              // ....
             ],
           ),
-        ),
+
+          // Recommendations
+          HeaderSection(title: "Recommendations for you", goPage: () {}),
+          Expanded(
+            child: ListView.builder(
+              itemCount: recommendation.length,
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 5,
+                ),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: RecommendationsPlaces(
+                    destination: recommendation[index],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+           
+        ],
       ),
     );
   }
