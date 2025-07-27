@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_ui/core/constants/colors.dart';
 import 'package:travel_app_ui/data/dummy/places_data.dart';
 import 'package:travel_app_ui/data/models/tourist_place.dart';
+import 'package:travel_app_ui/features/detail/screens/detail_screen.dart';
 import 'package:travel_app_ui/features/home/widgets/popular_places.dart';
 import 'package:travel_app_ui/features/home/widgets/recommendations_places.dart';
 import 'package:travel_app_ui/shared/widgets/bottom_bar.dart';
@@ -24,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.primary,
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,14 +64,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   horizontal: 15,
                 ),
                 child: SizedBox(
-                  height: 140,
+                  height: 160,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: popular.length,
                     itemBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.only(right: 15),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () => MaterialPageRoute(
+                          builder: (_) =>
+                              DetailScreen(selectedPlace: popular[index]),
+                        ),
                         child: PopularPlaces(destination: popular[index]),
                       ),
                     ),
@@ -89,7 +95,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   vertical: 5,
                 ),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () => MaterialPageRoute(
+                    builder: (_) =>
+                        DetailScreen(selectedPlace: recommendation[index]),
+                  ),
                   child: RecommendationsPlaces(
                     destination: recommendation[index],
                   ),
@@ -97,10 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: BottomBar(),
-          )
+          Align(alignment: Alignment.bottomCenter, child: BottomBar()),
         ],
       ),
     );

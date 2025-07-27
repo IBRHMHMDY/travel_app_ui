@@ -10,26 +10,24 @@ class RecommendationsPlaces extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Container(
-        height: 120,
+        height: 130,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Colors.white,
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade300, // لون ناعم وشفاف
-              spreadRadius: 2,
-              blurRadius: 10,
+              spreadRadius: 4,
+              blurRadius: 15,
               offset: Offset(0, 4), // يتحرك لأسفل قليلاً
             ),
           ],
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 120,
-              width: 150,
+              height: 130,
+              width: 140,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12),
@@ -42,15 +40,81 @@ class RecommendationsPlaces extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(destination.name),
-                  Text(destination.price.toString()),
-                  Text(destination.location),
-                  Text(destination.rating.toString()),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        destination.name,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            size: 14,
+                            color: Colors.black,
+                          ),
+                          SizedBox(width: 5),
+                          Text(
+                            destination.location,
+                            style: TextStyle(
+                              color: Colors.black38,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 5),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.yellow.shade700,
+                            size: 14,
+                          ),
+                          SizedBox(width: 5),
+                          Text(
+                            "(${destination.reviews.toString()} Reviews)",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black38,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 5),
+                      Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: "\$${destination.price.toString()}",
+                              style: TextStyle(
+                                color: Colors.blue.shade600,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            TextSpan(
+                              text: "/Person",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black38,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
