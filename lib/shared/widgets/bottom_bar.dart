@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {
-  BottomBar({super.key});
-  final int selectedPage = 0;
+  const BottomBar({super.key});
+
+  @override
+  State<BottomBar> createState() => _BottomBarState();
+}
+
+class _BottomBarState extends State<BottomBar> {
+  int selectedPage = 0;
+
   final List<IconData> icons = [
     Icons.home_outlined,
     Icons.location_searching_outlined,
@@ -10,11 +17,6 @@ class BottomBar extends StatefulWidget {
     Icons.person_outline,
   ];
 
-  @override
-  State<BottomBar> createState() => _BottomBarState();
-}
-
-class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,7 +41,21 @@ class _BottomBarState extends State<BottomBar> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [],
+            children: List.generate(
+              icons.length,
+              (index) => GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectedPage = index;
+                  });
+                },
+                child: Icon(
+                  icons[index],
+                  size: 32,
+                  color: selectedPage == index ? Colors.white : Colors.white70,
+                ),
+              ),
+            ),
           ),
         ),
       ),

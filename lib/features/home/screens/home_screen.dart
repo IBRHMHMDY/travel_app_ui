@@ -3,6 +3,7 @@ import 'package:travel_app_ui/data/dummy/places_data.dart';
 import 'package:travel_app_ui/data/models/tourist_place.dart';
 import 'package:travel_app_ui/features/home/widgets/popular_places.dart';
 import 'package:travel_app_ui/features/home/widgets/recommendations_places.dart';
+import 'package:travel_app_ui/shared/widgets/bottom_bar.dart';
 import 'package:travel_app_ui/shared/widgets/header_section.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -96,12 +97,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-        ],
-      ),
-      bottomNavigationBar: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-           
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: BottomBar(),
+          )
         ],
       ),
     );
