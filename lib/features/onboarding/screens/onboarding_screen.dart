@@ -14,6 +14,7 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   int selectedIndex = 0;
 
+
   Widget dotIndicator(int index) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 400),
@@ -27,6 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
+  
   @override
   Widget build(BuildContext context) {
     final int lastIndex = onboarding.length - 1;
@@ -42,7 +44,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 });
               },
               itemBuilder: (context, index) {
-                return Image.asset(onboarding[index].image, fit: BoxFit.cover);
+                return Image.asset(
+                  onboarding[index].image,
+                  cacheWidth: MediaQuery.of(context).size.width.toInt(),
+                  cacheHeight: MediaQuery.of(context).size.height.toInt(),
+                  fit: BoxFit.cover,
+                );
               },
             ),
             ?lastIndex != selectedIndex
