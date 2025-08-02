@@ -7,6 +7,11 @@ final List<TouristPlace> touristPlaces = [
     location: 'Banyuwangi, East Java',
     price: 20.0,
     imageUrl: 'assets/images/Kawah-Ijen-Indonesia-Lake-1244x700.jpg',
+    images: [
+      'assets/images/Kawah-Ijen-Indonesia-Lake-1244x700.jpg',
+      'assets/images/Kawah-Ijen-Indonesia-Lake-2.jpg',
+      'assets/images/Kawah-Ijen-Indonesia-Lake-3.jpg',
+    ],
     rating: 4.7,
     reviews: 3335,
     description:
@@ -19,6 +24,11 @@ final List<TouristPlace> touristPlaces = [
     location: 'Klungkung, Bali',
     price: 22.0,
     imageUrl: 'assets/images/KelingkingBeach.jpg',
+    images: [
+      'assets/images/KelingkingBeach2.jpg',
+      'assets/images/KelingkingBeach3.jpg',
+      'assets/images/KelingkingBeach4.jpg',
+    ],
     rating: 4.8,
     reviews: 2203,
     description:
@@ -31,6 +41,13 @@ final List<TouristPlace> touristPlaces = [
     location: 'Probolinggo, East Java',
     price: 26.0,
     imageUrl: 'assets/images/MountBromo.jpg',
+    images: [
+      'assets/images/MountBromo.jpg',
+      'assets/images/MountBromo2.jpg',
+      'assets/images/MountBromo3.jpg',
+      'assets/images/MountBromo4.jpg',
+      'assets/images/MountBromo5.jpg',
+    ],
     rating: 4.9,
     reviews: 4120,
     description:
@@ -43,6 +60,11 @@ final List<TouristPlace> touristPlaces = [
     location: 'Tabanan, Bali',
     price: 22.0,
     imageUrl: 'assets/images/UlunDanuBeratanTemple.jpg',
+    images: [
+      'assets/images/UlunDanuBeratanTemple.jpg',
+      'assets/images/UlunDanuBeratanTemple.jpg',
+      'assets/images/UlunDanuBeratanTemple.jpg',
+    ],
     rating: 4.8,
     reviews: 2350,
     description:
@@ -55,6 +77,13 @@ final List<TouristPlace> touristPlaces = [
     location: 'Probolinggo, East Java',
     price: 20.0,
     imageUrl: 'assets/images/madakaripuraWaterfall.jpg',
+    images: [
+      'assets/images/madakaripuraWaterfall.jpg',
+      'assets/images/madakaripuraWaterfall2.jpg',
+      'assets/images/madakaripuraWaterfall3.jpg',
+      'assets/images/madakaripuraWaterfall4.jpg',
+      'assets/images/madakaripuraWaterfall5.jpg',
+    ],
     rating: 4.7,
     reviews: 1203,
     description:
@@ -67,6 +96,11 @@ final List<TouristPlace> touristPlaces = [
     location: 'Bali',
     price: 28.0,
     imageUrl: 'assets/images/NusaPenida.jpg',
+    images: [
+      'assets/images/NusaPenida.jpg',
+      'assets/images/NusaPenida2.jpg',
+      'assets/images/NusaPenida3.jpg',
+    ],
     rating: 4.9,
     reviews: 1890,
     description:
@@ -79,6 +113,11 @@ final List<TouristPlace> touristPlaces = [
     location: 'Magelang, Central Java',
     price: 25.0,
     imageUrl: 'assets/images/BorobudurTemple.jpg',
+    images: [
+      'assets/images/BorobudurTemple.jpg',
+      'assets/images/BorobudurTemple.jpg',
+      'assets/images/BorobudurTemple.jpg',
+    ],
     rating: 4.9,
     reviews: 3000,
     description:
@@ -91,6 +130,11 @@ final List<TouristPlace> touristPlaces = [
     location: 'Lumajang, East Java',
     price: 24.0,
     imageUrl: 'assets/images/TumpakSewuWaterfall.jpg',
+    images: [
+      'assets/images/TumpakSewuWaterfall.jpg',
+      'assets/images/TumpakSewuWaterfall.jpg',
+      'assets/images/TumpakSewuWaterfall.jpg',
+    ],
     rating: 4.8,
     reviews: 1780,
     description:
@@ -103,6 +147,11 @@ final List<TouristPlace> touristPlaces = [
     location: 'West Papua',
     price: 30.0,
     imageUrl: 'assets/images/RajaAmpatIslands.jpg',
+    images: [
+      'assets/images/RajaAmpatIslands.jpg',
+      'assets/images/RajaAmpatIslands.jpg',
+      'assets/images/RajaAmpatIslands.jpg',
+    ],
     rating: 5.0,
     reviews: 980,
     description:
@@ -115,6 +164,11 @@ final List<TouristPlace> touristPlaces = [
     location: 'North Sumatra',
     price: 18.0,
     imageUrl: 'assets/images/LakeToba.jpg',
+    images: [
+      'assets/images/LakeToba.jpg',
+      'assets/images/LakeToba.jpg',
+      'assets/images/LakeToba.jpg',
+    ],
     rating: 4.6,
     reviews: 1450,
     description:

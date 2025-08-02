@@ -71,9 +71,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (context, index) => Padding(
                       padding: const EdgeInsets.only(right: 15),
                       child: GestureDetector(
-                        onTap: () => MaterialPageRoute(
-                          builder: (_) =>
-                              DetailScreen(selectedPlace: popular[index]),
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) =>
+                                DetailScreen(selectedPlace: popular[index]),
+                          ),
                         ),
                         child: PopularPlaces(destination: popular[index]),
                       ),
@@ -95,9 +98,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   vertical: 5,
                 ),
                 child: GestureDetector(
-                  onTap: () => MaterialPageRoute(
-                    builder: (_) =>
-                        DetailScreen(selectedPlace: recommendation[index]),
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          DetailScreen(selectedPlace: recommendation[index]),
+                    ),
                   ),
                   child: RecommendationsPlaces(
                     destination: recommendation[index],

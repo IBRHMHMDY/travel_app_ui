@@ -5,7 +5,6 @@ import 'package:travel_app_ui/features/onboarding/screens/onboarding_screen.dart
 class AppRoutes {
   static const String onboarding = "/";
   static const String home = "Home";
-  static const String detail = "Detail";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {

@@ -19,10 +19,10 @@ class PopularPlaces extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black, // لون ناعم وشفاف
+                  color: Colors.black,
                   spreadRadius: 5,
                   blurRadius: 10,
-                  offset: Offset(3, 6), // يتحرك لأسفل قليلاً
+                  offset: Offset(3, 6),
                 ),
               ],
             ),

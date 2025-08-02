@@ -1,9 +1,11 @@
+
 class TouristPlace {
   final String id;
   final String name;
   final String location;
   final double price;
   final String imageUrl;
+  final List<String> images;
   final double rating;
   final int reviews;
   final String description;
@@ -15,6 +17,7 @@ class TouristPlace {
     required this.location,
     required this.price,
     required this.imageUrl,
+    required this.images,
     required this.rating,
     required this.reviews,
     required this.description,
